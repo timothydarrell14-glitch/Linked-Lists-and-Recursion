@@ -1,47 +1,21 @@
-
 class Node:
-    """
-    A Node class to store integer data and a reference to the next node.
-    """
-
     def __init__(self, data):
-        """
-        TODO:
-        - Assign the provided 'data' to an instance variable.
-        - Initialize 'next' to None.
-        """
-        pass
-
-
+        self.data = data
+        self.next = None
 class LinkedList:
-    """
-    A singly linked list that holds Node objects and performs operations using recursion.
-    """
-
     def __init__(self):
-        """
-        TODO:
-        - Initialize 'head' to None to represent an empty list.
-        """
-        pass
+       self.head = None
 
     def insert_at_front(self, data):
-        """
-        TODO:
-        - Create a new Node with 'data'.
-        - Insert it at the front of the list (head).
-        - Update 'head' to the new node.
-        """
-        pass
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
     def insert_at_end(self, data):
-        """
-        (Optional) TODO:
-        - Create a new Node with 'data'.
-        - Traverse to the end of the list.
-        - Set the last node's 'next' reference to the new node.
-        """
-        pass
+        new_node = Node(data)
+        current = self.head
+        while current.next:
+            current.next - new_node
 
     def recursive_sum(self):
         """
@@ -84,4 +58,7 @@ class LinkedList:
         - Traverse from 'head' and collect each node's data.
         - Format output as 'val -> val -> val -> None' or similar.
         """
-        pass
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
